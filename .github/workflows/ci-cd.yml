@@ -142,7 +142,7 @@ jobs:
       # Keep the server's compose file and deploy script in step with the repo. Nothing else is copied:
       # the server runs the images, and its .env, database and uploads are never touched.
       - name: Upload docker-compose.yml and deploy script
-        uses: appleboy/scp-action@v0.1.7
+        uses: appleboy/scp-action@v1.0.0
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USER }}
