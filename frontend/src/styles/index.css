@@ -1,0 +1,321 @@
+@import "tailwindcss";
+
+/*
+  The Fireside design system. Every colour, font, size and easing is named once here,
+  and Tailwind turns each into utilities (bg-coal, text-cream, font-display, text-h2 ...).
+
+  Idea: firelight in a dark room. Charcoal and timber tones carry the page; antique gold is the
+  only light source, used sparingly for what matters (the reservation call, prices, labels).
+*/
+@theme {
+  /* Type */
+  --font-sans: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+
+  /* Palette (from the brief) */
+  --color-coal: #171715; /* page ground */
+  --color-night: #20201d; /* raised surfaces, alternate sections */
+  --color-espresso: #352820; /* warm depth, firelight shadows */
+  --color-earth: #594332; /* timber lines, dividers on warm grounds */
+  --color-gold: #b69a68; /* the one accent: brass, candlelight */
+  --color-gold-bright: #cdb283; /* gold hover state */
+  --color-cream: #e8ddcb; /* primary text */
+  --color-smoke: #a99e8c; /* secondary text (6.9:1 on coal) */
+  --color-ash: #8a8172; /* tertiary text, large or non-essential only */
+  --color-olive: #555844; /* rare accent: dietary marks */
+  --color-ember: #c65b32; /* burnt terracotta: the hover colour for buttons and navigation */
+  --color-ember-deep: #c2361b; /* the red heart of the flame, used in the ember glow */
+  --color-line: rgb(232 221 203 / 0.14); /* hairlines on dark */
+  --color-danger: #e0907a;
+  --color-success: #a9b58a;
+
+  /* Type scale: fluid, one ratio, used everywhere */
+  --text-label: 0.75rem;
+  --text-label--letter-spacing: 0.28em;
+  --text-label--line-height: 1.4;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.6;
+  --text-body: 1rem;
+  --text-body--line-height: 1.75;
+  --text-lead: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  --text-lead--line-height: 1.7;
+  --text-h3: clamp(1.625rem, 1.4rem + 0.9vw, 2.25rem);
+  --text-h3--line-height: 1.1;
+  --text-title: clamp(2rem, 1.5rem + 1.8vw, 3.25rem);
+  --text-title--line-height: 1.05;
+  --text-h2: clamp(2.5rem, 1.8rem + 2.8vw, 4.5rem);
+  --text-h2--line-height: 1;
+  --text-h1: clamp(3rem, 2rem + 4.4vw, 6.5rem);
+  --text-h1--line-height: 0.95;
+  --text-display: clamp(3.75rem, 1.8rem + 8.6vw, 10.5rem);
+  --text-display--line-height: 0.86;
+
+  /* Spacing: 8px base. One section rhythm for the whole site, one heading-to-content gap. */
+  --spacing-section: clamp(4rem, 2.6rem + 4.5vw, 7rem);
+  --spacing-rhythm: clamp(3rem, 2.2rem + 2.5vw, 4.5rem);
+  --spacing-gutter: clamp(1.25rem, 0.5rem + 3vw, 4rem);
+
+  --breakpoint-3xl: 112rem;
+
+  /* One easing for the whole site, shared with Motion in utils/motion.js. */
+  --ease-site: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-cinema: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-ken-burns: ken-burns 22s var(--ease-cinema) both;
+  --animate-flicker: flicker 5s ease-in-out infinite;
+  --animate-cue: cue 2.4s var(--ease-site) infinite;
+
+  @keyframes ken-burns {
+    from { transform: scale(1.14); }
+    to { transform: scale(1.02); }
+  }
+  @keyframes flicker {
+    0%, 100% { opacity: 0.9; }
+    40% { opacity: 1; }
+    60% { opacity: 0.8; }
+  }
+  /* the smoke backdrop: slow drift, swell and fade, in three out-of-step patterns */
+  @keyframes smoke-a {
+    0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); opacity: 0.7; }
+    50% { transform: translate3d(18vw, -10vh, 0) scale(1.3) rotate(25deg); opacity: 1; }
+    100% { transform: translate3d(-6vw, 8vh, 0) scale(0.95) rotate(-10deg); opacity: 0.55; }
+  }
+  @keyframes smoke-b {
+    0% { transform: translate3d(0, 0, 0) scale(1.1) rotate(0deg); opacity: 0.9; }
+    50% { transform: translate3d(-20vw, 14vh, 0) scale(0.85) rotate(-30deg); opacity: 0.55; }
+    100% { transform: translate3d(6vw, -12vh, 0) scale(1.3) rotate(15deg); opacity: 1; }
+  }
+  @keyframes smoke-c {
+    0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); opacity: 0.6; }
+    50% { transform: translate3d(8vw, -14vh, 0) scale(1.35) rotate(30deg); opacity: 1; }
+    100% { transform: translate3d(-10vw, -4vh, 0) scale(1.05) rotate(-5deg); opacity: 0.7; }
+  }
+  @keyframes smoke-wisp {
+    0% { transform: translate3d(0, 12vh, 0) scale(1) rotate(0deg); }
+    50% { transform: translate3d(-9vw, -2vh, 0) scale(1.12) rotate(4deg); }
+    100% { transform: translate3d(7vw, -16vh, 0) scale(1.04) rotate(-3deg); }
+  }
+  @keyframes cue {
+    0% { transform: scaleY(0); transform-origin: top; }
+    45% { transform: scaleY(1); transform-origin: top; }
+    55% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Nothing may push the page sideways (drifting smoke letters, scaled photos). clip keeps sticky working. */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  body {
+    @apply bg-coal font-sans text-body text-cream antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-gold text-coal;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-4 outline-gold;
+  }
+
+  h1, h2, h3 {
+    @apply font-display font-medium;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    @apply select-none;
+  }
+
+  input, select, textarea {
+    color-scheme: dark;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
+
+@layer components {
+  /* The page container: one max width and one gutter everywhere. */
+  .shell {
+    @apply mx-auto w-full max-w-[90rem] px-gutter;
+  }
+  /* From tablet up, the fixed side buttons (social rail and music on the left, back-to-top on the right)
+     sit in the margins, so content keeps at least 6rem clear of each edge. */
+  @media (min-width: 48rem) {
+    .shell {
+      padding-inline: max(var(--spacing-gutter), 6rem);
+    }
+  }
+
+  /* Buttons and controls: a 2px bevelled (chamfered) corner. Browsers without corner-shape show 2px rounding. */
+  .bevel {
+    border-radius: 2px;
+  }
+  @supports (corner-shape: bevel) {
+    .bevel {
+      corner-shape: bevel;
+    }
+  }
+
+  /* Button drop shadow: a soft warm-black layer set to Multiply, like a Photoshop drop shadow
+     (Multiply, ~75% opacity, 8px distance, 12px size). It sits under the button and darkens whatever is
+     beneath it. Deepens slightly on hover as the button lifts. */
+  .btn-shadow {
+    position: relative;
+  }
+  .btn-shadow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 2px;
+    background: rgb(12 7 4 / 0.75);
+    mix-blend-mode: multiply;
+    filter: blur(12px);
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: transform 0.4s var(--ease-site), opacity 0.4s var(--ease-site), filter 0.4s var(--ease-site);
+  }
+  @supports (corner-shape: bevel) {
+    .btn-shadow::before {
+      corner-shape: bevel;
+    }
+  }
+  .btn-shadow:hover::before {
+    transform: translateY(11px);
+    filter: blur(15px);
+  }
+  .btn-shadow:active::before {
+    transform: translateY(4px);
+    filter: blur(8px);
+  }
+
+  /* Image drop shadow: the same Multiply shadow, larger, cut to the photo's burnt outline.
+     Markup: <div class="img-shadow"><div style="mask: ..."></div></div> placed under the photo. */
+  .img-shadow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    opacity: 0.7;
+    filter: blur(22px);
+    transform: translateY(8px);
+  }
+  .img-shadow > div {
+    position: absolute;
+    inset: 0;
+    background: rgb(12 7 4);
+  }
+
+  /* Navigation hover: the text catches like a coal, fire orange-red (hover:text-ember on the link, #C65B32) with a
+     faint glow from this class. */
+  .ember-hover {
+    transition: color 0.35s var(--ease-site), text-shadow 0.35s var(--ease-site);
+  }
+  .ember-hover:hover,
+  .ember-hover:focus-visible {
+    text-shadow: 0 0 12px rgb(198 91 50 / 0.6), 0 0 2px rgb(194 54 27 / 0.5);
+  }
+
+  /* Floating icons (social rail, music button): no background, just the gold mark. A tight shadow keeps
+     them readable over photos; on hover they turn burnt terracotta with a faint fire glow. */
+  .icon-float {
+    filter: drop-shadow(0 1px 3px rgb(0 0 0 / 0.75));
+    transition: color 0.3s var(--ease-site), filter 0.3s var(--ease-site);
+  }
+  .icon-float:hover,
+  .icon-float:focus-visible {
+    color: var(--color-ember);
+    filter: drop-shadow(0 1px 3px rgb(0 0 0 / 0.75)) drop-shadow(0 0 8px rgb(198 91 50 / 0.7));
+  }
+
+  /* Range slider (music volume): hairline track that fills gold, small brass thumb. */
+  .range {
+    appearance: none;
+    height: 1.5rem;
+    background: transparent;
+    cursor: pointer;
+  }
+  .range::-webkit-slider-runnable-track {
+    height: 2px;
+    background: linear-gradient(to right, var(--color-gold) var(--fill), rgb(232 221 203 / 0.18) var(--fill));
+  }
+  .range::-moz-range-track {
+    height: 2px;
+    background: linear-gradient(to right, var(--color-gold) var(--fill), rgb(232 221 203 / 0.18) var(--fill));
+  }
+  .range::-webkit-slider-thumb {
+    appearance: none;
+    margin-top: -6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    background: var(--color-cream);
+    border: 2px solid var(--color-gold);
+  }
+  .range::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    background: var(--color-cream);
+    border: 2px solid var(--color-gold);
+  }
+
+  /* Small uppercase labels: navigation, eyebrows, buttons. */
+  .label {
+    @apply font-sans text-label font-semibold uppercase;
+  }
+
+  /* Film grain over the whole site: the "paper and timber" texture, kept very quiet. */
+  .grain {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 0.92 0 0 0 0 0.8 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Warm firelight glow rising from the bottom of a section. */
+  .firelight {
+    background: radial-gradient(120% 70% at 50% 110%, rgb(89 67 50 / 0.55), rgb(53 40 32 / 0.25) 45%, transparent 75%);
+  }
+
+  /* A gold hairline with a small diamond in the middle: the site's one ornament. */
+  .ornament {
+    @apply flex items-center gap-4 text-gold;
+  }
+  .ornament::before,
+  .ornament::after {
+    content: "";
+    @apply h-px flex-1 bg-current opacity-40;
+  }
+
+  /* Photo grade: all supplied photography is pulled into the same warm, low-key look. */
+  .grade {
+    filter: saturate(0.9) contrast(1.05) brightness(0.9) sepia(0.1);
+  }
+}

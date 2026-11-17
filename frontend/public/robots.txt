@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thefireside.co.za/sitemap.xml

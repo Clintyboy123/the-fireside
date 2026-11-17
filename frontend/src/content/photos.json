@@ -1,0 +1,282 @@
+{
+  "hero": {
+    "file": "hero",
+    "width": 1600,
+    "height": 1200,
+    "alt": "The Fireside garden at night: guests at long tables under stretch tents and string lights",
+    "kind": "venue",
+    "gallery": false
+  },
+  "story": {
+    "file": "story",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Logs burning in the fire pit",
+    "kind": "venue",
+    "gallery": false
+  },
+  "menu-hero": {
+    "file": "menu-hero",
+    "width": 1080,
+    "height": 1080,
+    "alt": "A hand-rolled pizza on a wooden board",
+    "kind": "food",
+    "gallery": false
+  },
+  "menu-tapas": {
+    "file": "menu-tapas",
+    "width": 1569,
+    "height": 1345,
+    "alt": "Garlic butter and parmesan escargots",
+    "kind": "food",
+    "gallery": false
+  },
+  "menu-grills": {
+    "file": "menu-grills",
+    "width": 1080,
+    "height": 1080,
+    "alt": "A T-bone steak with rustic chips and sauce",
+    "kind": "food",
+    "gallery": false
+  },
+  "menu-pizza": {
+    "file": "menu-pizza",
+    "width": 1080,
+    "height": 1080,
+    "alt": "A guest reaching for a pizza topped with fresh basil",
+    "kind": "food",
+    "gallery": false
+  },
+  "menu-kitchen": {
+    "file": "menu-kitchen",
+    "width": 1080,
+    "height": 1350,
+    "alt": "A plate of creamy pasta carried to the table",
+    "kind": "food",
+    "gallery": false
+  },
+  "menu-desserts": {
+    "file": "menu-desserts",
+    "width": 894,
+    "height": 708,
+    "alt": "Chocolate brownie with ice cream and berries",
+    "kind": "food",
+    "gallery": false
+  },
+  "menu-drinks": {
+    "file": "menu-drinks",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Two colourful cocktails on the deck",
+    "kind": "drink",
+    "gallery": false
+  },
+  "sig-alfredo": {
+    "file": "sig-alfredo",
+    "width": 1080,
+    "height": 1080,
+    "alt": "Creamy fettuccine pasta with fresh herbs",
+    "kind": "food",
+    "gallery": false
+  },
+  "sig-pizza": {
+    "file": "sig-pizza",
+    "width": 1080,
+    "height": 1350,
+    "alt": "A pizza with tzatziki and rocket served on a wooden board",
+    "kind": "food",
+    "gallery": false
+  },
+  "sig-breakfast": {
+    "file": "sig-breakfast",
+    "width": 1080,
+    "height": 1350,
+    "alt": "A full breakfast with fried eggs, bacon and relish",
+    "kind": "food",
+    "gallery": false
+  },
+  "sig-platter": {
+    "file": "sig-platter",
+    "width": 1066,
+    "height": 1600,
+    "alt": "A sharing board of ribs, grillers and chips",
+    "kind": "food",
+    "gallery": false
+  },
+  "venue": {
+    "file": "venue",
+    "width": 1126,
+    "height": 1600,
+    "alt": "A long table dressed with candles and greenery for an event",
+    "kind": "venue",
+    "gallery": false
+  },
+  "story-hero": {
+    "file": "story-hero",
+    "width": 1080,
+    "height": 1080,
+    "alt": "Friends raising a toast at a table in the garden",
+    "kind": "people",
+    "gallery": false
+  },
+  "story-kids": {
+    "file": "story-kids",
+    "width": 1080,
+    "height": 1080,
+    "alt": "Three children sitting by the fire at night",
+    "kind": "people",
+    "gallery": false
+  },
+  "story-table": {
+    "file": "story-table",
+    "width": 1322,
+    "height": 997,
+    "alt": "A long table set with eucalyptus, candles and white linen",
+    "kind": "venue",
+    "gallery": false
+  },
+  "g-wine": {
+    "file": "g-wine",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Red wine poured into a glass on a timber table",
+    "kind": "drink",
+    "gallery": true
+  },
+  "g-burger": {
+    "file": "g-burger",
+    "width": 1080,
+    "height": 1080,
+    "alt": "A burger stacked with onion rings and chips",
+    "kind": "food",
+    "gallery": true
+  },
+  "g-bar": {
+    "file": "g-bar",
+    "width": 1080,
+    "height": 1080,
+    "alt": "Friends toasting at the bar",
+    "kind": "people",
+    "gallery": true
+  },
+  "g-lounge": {
+    "file": "g-lounge",
+    "width": 1080,
+    "height": 1080,
+    "alt": "The lounge under the tent with sofas and plants",
+    "kind": "venue",
+    "gallery": true
+  },
+  "g-cocktail": {
+    "file": "g-cocktail",
+    "width": 1080,
+    "height": 1080,
+    "alt": "A guest holding a frozen cocktail with orange and mint",
+    "kind": "drink",
+    "gallery": true
+  },
+  "g-pizza": {
+    "file": "g-pizza",
+    "width": 1080,
+    "height": 1080,
+    "alt": "A pizza topped with fresh basil leaves",
+    "kind": "food",
+    "gallery": true
+  },
+  "g-couple": {
+    "file": "g-couple",
+    "width": 1080,
+    "height": 1350,
+    "alt": "A couple sharing a laugh over drinks",
+    "kind": "people",
+    "gallery": true
+  },
+  "g-firepit": {
+    "file": "g-firepit",
+    "width": 1080,
+    "height": 810,
+    "alt": "The fire pit lit in the garden at night",
+    "kind": "venue",
+    "gallery": true
+  },
+  "g-burger2": {
+    "file": "g-burger2",
+    "width": 1080,
+    "height": 1350,
+    "alt": "A burger with sweet potato fries",
+    "kind": "food",
+    "gallery": true
+  },
+  "g-interior": {
+    "file": "g-interior",
+    "width": 1080,
+    "height": 1350,
+    "alt": "The bar inside The Fireside",
+    "kind": "venue",
+    "gallery": true
+  },
+  "g-friends": {
+    "file": "g-friends",
+    "width": 1080,
+    "height": 1080,
+    "alt": "Two friends laughing over cocktails",
+    "kind": "people",
+    "gallery": true
+  },
+  "g-pizzawine": {
+    "file": "g-pizzawine",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Pizza and a glass of red wine",
+    "kind": "food",
+    "gallery": true
+  },
+  "g-service": {
+    "file": "g-service",
+    "width": 1080,
+    "height": 1350,
+    "alt": "A smiling waitress carrying drinks",
+    "kind": "people",
+    "gallery": true
+  },
+  "g-sangria": {
+    "file": "g-sangria",
+    "width": 1080,
+    "height": 1350,
+    "alt": "A jug cocktail with orange slices",
+    "kind": "drink",
+    "gallery": true
+  },
+  "g-garden": {
+    "file": "g-garden",
+    "width": 1080,
+    "height": 1350,
+    "alt": "Guests in the garden under the umbrellas",
+    "kind": "venue",
+    "gallery": true
+  },
+  "g-steakegg": {
+    "file": "g-steakegg",
+    "width": 1080,
+    "height": 1080,
+    "alt": "Steak and egg with chips",
+    "kind": "food",
+    "gallery": true
+  },
+  "g-sundowner": {
+    "file": "g-sundowner",
+    "width": 1080,
+    "height": 1350,
+    "alt": "A guest enjoying a cocktail at her table",
+    "kind": "people",
+    "gallery": true
+  },
+  "g-play": {
+    "file": "g-play",
+    "width": 1080,
+    "height": 1350,
+    "alt": "A girl jumping on the trampoline in the play area",
+    "kind": "people",
+    "gallery": true
+  }
+}
