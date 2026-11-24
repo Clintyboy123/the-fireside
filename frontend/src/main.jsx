@@ -7,10 +7,11 @@ import '@fontsource/cormorant-garamond/500-italic.css';
 import '@fontsource/cormorant-garamond/600.css';
 import '@fontsource-variable/manrope';
 import './styles/index.css';
+import { BASE } from './utils/asset';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={BASE}>
       <App />
     </BrowserRouter>
   </StrictMode>
